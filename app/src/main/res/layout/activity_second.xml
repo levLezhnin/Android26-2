@@ -1,18 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".SecondActivity">
+    android:orientation="vertical">
 
-    <Toolbar
-        android:id="@+id/toolbar"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:title="@string/article_title"
-        android:navigationIcon="@drawable/arrow_back" />
+        android:layout_height="match_parent">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="«Лента» приобретает сеть «О’кей»"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2 июня 2026"
+                android:textSize="14sp"
+                android:layout_marginBottom="16dp" />
+
+            <CheckBox
+                android:id="@+id/checkboxRead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Прочитано"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/imageViewArticle"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:contentDescription="Изображение статьи"
+                android:background="#E0E0E0"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Сеть магазинов «Лента» официально объявила о приобретении гипермаркетов «О’кей». В сделку войдут 75 гипермаркетов, а также четыре арендованных распределительных центра."
+                android:textSize="16sp"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Магазины расположены в шести федеральных округах России. Сделка структурирована без денежной составляющей. «Лента» принимает на себя долговые обязательства приобретаемой компании в качестве оплаты 100% долей."
+                android:textSize="16sp"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Как отмечается в пресс-релизе, сделка структурирована без денежной составляющей. «Лента» принимает на себя долговые обязательства приобретаемой компании в качестве оплаты 100% долей."
+                android:textSize="16sp"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Сделка одобрена Федеральной антимонопольной службой России."
+                android:textSize="16sp"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="«Как продавали «О’кей»"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginBottom="24dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="«Совет директоров O’KEY Group S.A. в декабре 2024 года принял решение передать сеть гипермаркетов «О’кей» менеджменту, оставив за собой только дискаунтеры «ДА!»»"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginBottom="24dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="В декабре 2025 года 99,56% ООО «О’кей» перешло компании ООО «РБФ Ритейл», 0,44% осталось у «О Кей Менеджмент». Само ООО «РБФ Ритейл» незадолго до этого ФАС разрешила продать компании «Земун»."
+                android:textSize="16sp"
+                android:textStyle="italic"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginBottom="24dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Переход 99% долей компании был юридически оформлен в декабре. Как сообщала «Фонтанка», у «Земуна» прослеживаются косвенные связи с менеджментом «Ленты»."
+                android:textSize="16sp"
+                android:textStyle="italic"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginBottom="24dp" />
+
+            <Button
+                android:id="@+id/btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="К предыдущей статье"
+                android:padding="8dp"
+                android:textSize="18sp"
+                android:textAlignment="center"
+                />
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
