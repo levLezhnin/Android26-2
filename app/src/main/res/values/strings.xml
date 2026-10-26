@@ -1,4 +1,17 @@
 <resources>
     <string name="app_name">DroidPractice1</string>
     <string name="article_title">Статья</string>
+    <string name="second_article_title">«Лента» приобретает сеть «О’кей»</string>
+    <string name="second_article_date">2 июня 2026</string>
+    <string name="article_read">Прочитано</string>
+    <string name="article_image_description">Изображение статьи</string>
+    <string name="second_article_intro">Сеть магазинов «Лента» официально объявила о приобретении гипермаркетов «О’кей». В сделку войдут 75 гипермаркетов, а также четыре арендованных распределительных центра.</string>
+    <string name="second_article_details" formatted="false">Магазины расположены в шести федеральных округах России. Сделка структурирована без денежной составляющей. «Лента» принимает на себя долговые обязательства приобретаемой компании в качестве оплаты 100% долей.</string>
+    <string name="second_article_terms" formatted="false">Как отмечается в пресс-релизе, сделка структурирована без денежной составляющей. «Лента» принимает на себя долговые обязательства приобретаемой компании в качестве оплаты 100% долей.</string>
+    <string name="second_article_approval">Сделка одобрена Федеральной антимонопольной службой России.</string>
+    <string name="second_article_history_title">«Как продавали «О’кей»</string>
+    <string name="second_article_history_quote">«Совет директоров O’KEY Group S.A. в декабре 2024 года принял решение передать сеть гипермаркетов «О’кей» менеджменту, оставив за собой только дискаунтеры «ДА!»»</string>
+    <string name="second_article_history_ownership" formatted="false">В декабре 2025 года 99,56% ООО «О’кей» перешло компании ООО «РБФ Ритейл», 0,44% осталось у «О Кей Менеджмент». Само ООО «РБФ Ритейл» незадолго до этого ФАС разрешила продать компании «Земун».</string>
+    <string name="second_article_history_shares" formatted="false">Переход 99% долей компании был юридически оформлен в декабре. Как сообщала «Фонтанка», у «Земуна» прослеживаются косвенные связи с менеджментом «Ленты».</string>
+    <string name="back_to_previous_article">К предыдущей статье</string>
 </resources>

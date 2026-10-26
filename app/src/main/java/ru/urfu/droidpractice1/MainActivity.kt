@@ -31,6 +31,11 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -39,9 +44,7 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
-import ru.urfu.droidpractice1.ui.ArticleViewModel
 
 class MainActivity : ComponentActivity() {
     private val TAG = "MainActivity"
@@ -66,16 +69,17 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun ArticleScreen(viewModel: ArticleViewModel = viewModel()) {
+fun ArticleScreen() {
     val context = LocalContext.current
     val scrollState = rememberScrollState()
+    var likes by rememberSaveable { mutableIntStateOf(0) }
+    var isRead by rememberSaveable { mutableStateOf(false) }
 
     val launcher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.StartActivityForResult()
     ) { result ->
         if (result.resultCode == Activity.RESULT_OK) {
-            val isRead = result.data?.getBooleanExtra("isRead", false) ?: false
-            viewModel.isRead = isRead
+            isRead = result.data?.getBooleanExtra("isRead", false) ?: false
         }
     }
 
@@ -116,15 +120,15 @@ fun ArticleScreen(viewModel: ArticleViewModel = viewModel()) {
 
         Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Absolute.Left) {
             Row(verticalAlignment = Alignment.CenterVertically) {
-                IconButton(onClick = { viewModel.likes++ }) {
+                IconButton(onClick = { likes++ }) {
                     Icon(imageVector = Icons.Default.KeyboardArrowUp, contentDescription = "Лайк")
                 }
             }
             Row(verticalAlignment = Alignment.CenterVertically) {
-                IconButton(onClick = { viewModel.likes-- }) {
+                IconButton(onClick = { likes-- }) {
                     Icon(imageVector = Icons.Default.KeyboardArrowDown, contentDescription = "Дизлайк")
                 }
-                Text(text = "${viewModel.likes}", style = MaterialTheme.typography.bodyLarge)
+                Text(text = "${likes}", style = MaterialTheme.typography.bodyLarge)
             }
         }
 
@@ -183,19 +187,19 @@ fun ArticleScreen(viewModel: ArticleViewModel = viewModel()) {
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        val buttonColor = if (viewModel.isRead) Color.Green else MaterialTheme.colorScheme.primary
+        val buttonColor = if (isRead) Color.Green else MaterialTheme.colorScheme.primary
 
         Button(
             onClick = {
                 val intent = Intent(context, SecondActivity::class.java).apply {
-                    putExtra("INITIAL_IS_READ", viewModel.isRead)
+                    putExtra("INITIAL_IS_READ", isRead)
                 }
                 launcher.launch(intent)
               },
             modifier = Modifier.fillMaxWidth(),
             colors = ButtonDefaults.buttonColors(containerColor = buttonColor)
         ) {
-            Text(text = if (viewModel.isRead) "Перейти ко второй статье (✓)" else "Перейти ко второй статье")
+            Text(text = if (isRead) "Перейти ко второй статье (✓)" else "Перейти ко второй статье")
         }
     }
 }
